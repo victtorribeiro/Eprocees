@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class IndexController {
 
-    @RequestMapping("/")
+    @RequestMapping("/index")
     public String index() {
         return "index";
     }
@@ -17,7 +17,7 @@ public class IndexController {
         return "cadastrar_impedimento";
     }
 
-    @GetMapping("selecionar_magistrado")
+    @GetMapping("/selecionar_magistrado")
     public String selecionarMagistrado() {
         return "selecionar_magistrado";
     }
