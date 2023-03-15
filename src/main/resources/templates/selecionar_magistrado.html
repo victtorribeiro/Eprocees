@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastrar Impedimento</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="css/selecionar_magistrado.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <header>SELECIONAR MAGISTRADO</header>
+    </div>
+
+    <div class="container-fluid">
+      <form>
+        <label for="matricula">Matrícula:</label><br />
+        <input type="text" id="matricula" name="matricula" /><br />
+        <label for="nome">Nome:</label><br />
+        <input type="text" id="nome" name="nome" />
+      </form>
+    </div>
+    <div class="container-fluid">
+      <hr />
+    </div>
+    <div class="container-fluid">
+      <div class="selecionarAcao">
+        <input type="button" value="Pesquisar" />
+        <input type="button" value="Limpar" />
+        <input type="button" value="Cancelar/Fechar" />
+      </div>
+    </div>
+    <div class="container-fluid">
+      <hr />
+    </div>
+    <div class="container-fluid">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>SELECIONAR</th>
+            <th>MATRÍCULA</th>
+            <th>NOME</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="nome1_aqui"
+                  name="radios"
+                  value="Teste"
+                />
+              </td>
+              <td>00001</td>
+              <td>Juiz 1</td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="nome2_aqui"
+                  name="radios"
+                  value="Teste"
+                />
+              </td>
+              <td>00002</td>
+              <td>Juiz 2</td>
+            </tr>
+            <tr>
+              <td>
+                <input
+                  type="radio"
+                  id="nome3_aqui"
+                  name="radios"
+                  value="Teste"
+                />
+              </td>
+              <td>00003</td>
+              <td>Juiz 3</td>
+            </tr>
+          </form>
+        </tbody>
+      </table>
+    </div>
+    <a href="#">
+      <span class="glyphicon glyphicon-trash"></span>
+    </a>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+  </body>
+</html>
