@@ -6,9 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Impedimento</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/css/index.css" media="all">
 </head>
 <body>
-    <button type="button" class="btn btn-primary">Primary</button>
+    <div id="conteudo" class="container-fluid">
+
+        <div id="cabecalhoCorpo">
+            <h2>Impedimento</h2>
+        </div>
+
+        <div id="filtros" class="col-10 offset-1">
+            <div class="row">
+                <label for="inputPassword" class="col-1 col-form-label fw-bold">Magistrado:</label>
+                <div class="col-10">
+                    <div class="row">
+                        <div class="col-2">
+                            <input type="password" class="form-control" id="MATRICULA" placeholder="Matrícula">
+                        </div>
+                        <div class="col-1">
+                            <button type="button" class="btn btn-primary">lanterna</button>
+                        </div>
+                        <div class="col-8">
+                            <input type="password" class="form-control" id="NOME" placeholder="Nome">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 mt-2">
+                    <p class="mb-0"><strong>DICA:</strong> Informe o magistrado desejado para vizualizar pessoas que geram impedimento.</p>
+                </div>
+            </div>
+        </div>
+        <div id="botoesFiltro" class="col-10 offset-1">
+            <div class="row">
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Pesquisar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Limpar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Imprimir</button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Cancelar/Fechar</button>
+            </div> 
+        </div>
+
+        <div id="resultadoConsulta" class="col-10 offset-1">
+            <h3>Pessoas Relaciondas</h3>
+
+            <div class="col-3 mb-3" id="botoesGrid">
+                <button type="button" class="btn btn-primary btn-sm col-3 me-3">Adicionar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-3 me-3">Editar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-3 me-3">Excluir</button>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered">
+            <tbody>
+                <tr>
+                    <th>Selecionar</th>
+                    <th>Pessoa</th>
+                    <th>Motivo</th>
+                    <th>Tipo</th>
+                    <th>Observação</th>
+                </tr>
+
+                <tr>
+                    <td><input type="radio" name="pessoaRelacionada" value="1"></td>
+                    <td>Andre Arnal Perenzi</td>
+                    <td>ART. 135 do CPC</td>
+                    <td>Advogado</td>
+                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="pessoaRelacionada" value="2"></td>
+                    <td>Andre Arnal Perenzi</td>
+                    <td>ART. 135 do CPC</td>
+                    <td>Advogado</td>
+                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="pessoaRelacionada" value="3"></td>
+                    <td>Andre Arnal Perenzi</td>
+                    <td>ART. 135 do CPC</td>
+                    <td>Advogado</td>
+                    <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+    </div>
     
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="jquery/jquery-3.6.4.min.js"></script>
