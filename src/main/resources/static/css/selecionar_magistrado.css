@@ -1,6 +1,6 @@
 header{
     text-align: left;
-    background-color: rgb(57, 180, 252);
+    background-color: rgb(126, 211, 218);
     padding: 5px;
     margin: 5px;
     font-weight: bold;
@@ -20,12 +20,17 @@ input{
 hr{
     margin: 5px;
     margin-top: 10px;
-    border: 3px solid rgb(57, 180, 252);
+    border: 3px solid rgb(126, 211, 218);
     opacity: 1;
 }
 
 
 .selecionarAcao{
+    margin-left: 5px;
     margin-top: 15px;
     margin-bottom: 15px;
+}
+
+table{
+    margin: 5px;
 }
