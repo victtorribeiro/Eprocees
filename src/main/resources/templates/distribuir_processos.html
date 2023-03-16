@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distribuir Processos</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="css/index.css" />
+  </head>
+
+  <body>
+    <div th:replace="navbar/navbar :: navbar"></div>
+    <div class="container-fluid">
+      <header class="header">CONSULTAR PROCESSOS A DISTRIBUIR</header>
+    </div>
+
+    <div class="container-fluid">
+      <form>
+        <label class="label" for="autosNumero">Autos do Processo Número:</label>
+        <input
+          class="input"
+          type="text"
+          id="autosNumero"
+          name="autosNumero"
+        /><br />
+        <label class="label" for="autosNumeroAntigo"
+          >Autos do Processo Número Antigo:</label
+        >
+        <input
+          class="input"
+          type="text"
+          id="autosNumeroAntigo"
+          name="autosNumeroAntigo"
+        /><br />
+        <label class="label" for="nomeParte">Nome da Parte:</label>
+        <input class="input" type="text" id="nomeParte" name="nomeParte" />
+        <label class="label" for="cpfCnpj">CPF/CNPJ:</label>
+        <input class="input" type="text" id="cpfCnpj" name="cpfCnpj" /><br />
+        <label class="label" for="advogado">Advogado:</label>
+        <input class="input" type="text" id="advogado" name="advogado" /><br />
+        <label class="label" for="escaninho">Escaninho:</label>
+        <input class="input" type="text" id="escaninho" name="escaninho" />
+      </form>
+    </div>
+    <div class="container-fluid">
+      <hr />
+    </div>
+    <div class="container-fluid">
+      <div class="selecionarAcao">
+        <button type="button" class="btn btn-outline-primary">Pesquisar</button>
+        <button type="button" class="btn btn-outline-secondary">Limpar</button>
+        <button type="button" class="btn btn-outline-danger">
+          Cancelar/Fechar
+        </button>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <hr />
+    </div>
+    <div class="container-fluid">
+      <table class="table table-striped table-bordered">
+        <header class="header">PROCESSOS A DISTRIBUIR</header>
+        <thead>
+          <tr>
+            <th>SELECIONAR</th>
+            <th>AUTOS DO PROCESSO NÚMERO</th>
+            <th>PARTE ATIVA</th>
+            <th>PARTE PASSIVA</th>
+            <th>CLASSE</th>
+            <th>ESPECIALIDADE</th>
+            <th>DATA AJUIZAMENTO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form>
+            <tr>
+              <td></td>
+              <td>
+                NENHUM PROCESSO A DISTRIBUIR FOI PESQUISADO ATÉ O MOMENTO.
+              </td>
+            </tr>
+          </form>
+        </tbody>
+      </table>
+      <hr />
+      <header class="header">PROCESSOS A REDISTRIBUIR</header>
+
+      <button type="button" class="btn btn-outline-primary" ;>
+        Redistribuir Processo
+      </button>
+      <table class="table table-striped table-bordered">
+        <thead>
+          <tr>
+            <th>SELECIONAR</th>
+            <th>AUTOS DO PROCESSO NÚMERO</th>
+            <th>PARTE ATIVA</th>
+            <th>PARTE PASSIVA</th>
+            <th>CLASSE</th>
+            <th>ESPECIALIDADE</th>
+            <th>DATA AJUIZAMENTO</th>
+          </tr>
+        </thead>
+        <tbody>
+          <form>
+            <tr>
+              <td>
+                <input
+                  type="checkbox"
+                  id="nome1_aqui"
+                  name="radios"
+                  value="Teste"
+                />
+              </td>
+              <td>00001</td>
+              <td>MINISTERIO PUBLICO ESTADUAL DO ESTADO DO ESPIRITO SANTO</td>
+              <td>ELAINE CRISTINE DE CARVALHO MIRANDA</td>
+              <td>RECURSO ADMINISTRATIVO</td>
+              <td>TRIBUNAL</td>
+              <td>31/01/2023</td>
+            </tr>
+          </form>
+        </tbody>
+      </table>
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+  </body>
+</html>
