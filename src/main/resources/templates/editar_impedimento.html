@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar/Edistar Impedimento</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/css/index.css" media="all">
+</head>
+
+<body>
+    <div th:replace="navbar/navbar :: navbar"></div>
+    <div id="conteudo" class="container-fluid">
+
+        
+        <div id="cabecalhoCorpo">
+            <header>DADOS DO IMPEDIMENTO</header>
+        </div>
+
+        <div id="conteudoFormulario" class="col-12">
+            <form>
+                <div class="row align-items-start">
+                    <div class="mb-0">
+                        <p><strong>Magistrado: ANNIBAL DE REZENDE LIMA</strong></p>
+                    </div>
+                    <div class="mb-1 row align-items-start">
+                        <label for="pessoa" class="form-label col-1">Pessoa:</label>
+                        <input type="text" class="col-4" id="pessoa" style="width: 31%;">
+                        <div class="col-1" style="width: 3%;">
+                            <img class="icone-pesquisa" src="icons/search.svg">
+                        </div>
+                        
+                    </div>
+                    <div class="mb-1 row align-items-start">
+                        <label for="motivo" class="form-label col-1">Motivo:</label>
+                        <select name="motivo" id="motivo" class="col-4">
+                            <option value=""></option>
+                            <option value="motivo1">Motivo 1</option>
+                            <option value="motivo2">Motivo 2</option>
+                            <option value="motivo3">Motivo 3</option>
+                        </select>
+                    </div>
+                    <div class="mb-1 row align-items-start">
+                        <label for="tipo" class="form-label col-1">Tipo:</label>
+                        <select name="tipo" id="tipo" class="col-4">
+                            <option value=""></option>
+                            <option value="tipo1">Tipo 1</option>
+                            <option value="tipo2">Tipo 2</option>
+                            <option value="tipo3">Tipo 3</option>
+                        </select>
+                    </div>
+                    <div class="mb-1 row align-items-start">
+                        <label for="observacao" class="form-label col-1">Observação:</label>
+                        <textarea name="observacao" id="observacao" cols="30" rows="7" class="col-4"></textarea>
+                    </div>
+                </div>
+
+                <div id="botoesFormulario" class="col-12">
+                    <button type="submit" class="btn btn-secondary btn-sm">Salvar</button>
+                    <button type="submit" class="btn btn-secondary btn-sm">Voltar/Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+</body>
+
+</html>
