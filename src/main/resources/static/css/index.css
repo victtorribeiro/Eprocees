@@ -15,25 +15,43 @@
     padding-top: 20px;
 }
 
+<<<<<<< HEAD
 .header{
+=======
+.header {
+>>>>>>> 9627bdd (Criação da tela buscar pessoa)
     text-align: left;
     background-color: rgb(192, 189, 158);
     padding: 5px;
     font-weight: bold;
 }
 
+<<<<<<< HEAD
 .selecionarAcao{
+=======
+.selecionarAcao {
+>>>>>>> 9627bdd (Criação da tela buscar pessoa)
     margin-left: 5px;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
+<<<<<<< HEAD
 .label{
+=======
+.label {
+>>>>>>> 9627bdd (Criação da tela buscar pessoa)
     text-align: left;
     margin: 5px;
 }
 
+<<<<<<< HEAD
 .icone-pesquisa {
     height: 20px;
     width: 20px;
 }
+=======
+.btnCorSistema{
+    background-color: rgb(192, 189, 158);
+}
+>>>>>>> 9627bdd (Criação da tela buscar pessoa)
