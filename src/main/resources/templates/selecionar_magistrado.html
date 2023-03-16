@@ -6,20 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selecionar Magistrado</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
-    <link rel="stylesheet" href="css/selecionar_magistrado.css" />
+    <link rel="stylesheet" href="css/index.css" />
   </head>
 
   <body>
     <div th:replace="navbar/navbar :: navbar"></div>
     <div class="container-fluid">
-      <header>SELECIONAR MAGISTRADO</header>
+      <header class="header">SELECIONAR MAGISTRADO</header>
     </div>
 
     <div class="container-fluid">
       <form>
-        <label for="matricula">Matrícula:</label><br />
+        <label class="label col-6 col-sm-1" for="matricula">Matrícula:</label>
         <input type="text" id="matricula" name="matricula" /><br />
-        <label for="nome">Nome:</label><br />
+        <label class="label col-6 col-sm-1" for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" />
       </form>
     </div>
