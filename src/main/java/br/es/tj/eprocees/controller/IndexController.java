@@ -17,6 +17,11 @@ public class IndexController {
         return "distribuir_processos";
     }
 
+    @GetMapping("/redistribuir_processo")
+    public String redistribuirProcessos() {
+        return "redistribuir_processo";
+    }
+
     @GetMapping("/cadastrar_impedimento")
     public String cadastrarImpedimento() {
         return "cadastrar_impedimento";

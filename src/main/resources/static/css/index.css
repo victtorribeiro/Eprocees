@@ -27,6 +27,13 @@
     font-weight: bold;
 }
 
+.header2{
+    padding-left: 10px;
+    padding-top: 10px;
+    text-align: left;
+    font-weight: bold;
+}
+
 .selecionarAcao{
     margin-left: 5px;
     margin-top: 15px;
@@ -36,4 +43,13 @@
 .label{
     text-align: left;
     margin: 5px;
+}
+
+.container-dados{
+    margin: 20px;
+}
+
+.hr{
+    margin: 0%;
+    margin-bottom: 10px;
 }
