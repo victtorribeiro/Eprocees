@@ -22,4 +22,9 @@ public class IndexController {
         return "selecionar_magistrado";
     }
 
+    @GetMapping("/editar_impedimento")
+    public String editarImpedimento() {
+        return "editar_impedimento";
+    }
+
 }
