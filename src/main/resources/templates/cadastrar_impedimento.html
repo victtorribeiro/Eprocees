@@ -9,10 +9,13 @@
     <link rel="stylesheet" href="/css/index.css" media="all">
 </head>
 <body>
+    <div th:replace="navbar/navbar :: navbar"></div>
     <div id="conteudo" class="container-fluid">
 
-        <div id="cabecalhoCorpo">
-            <h2>Impedimento</h2>
+        <div class="row">
+            <div id="cabecalhoCorpo">
+                <h2>Impedimento</h2>
+            </div>
         </div>
 
         <div id="filtros" class="col-10 offset-1">
@@ -36,6 +39,7 @@
                 </div>
             </div>
         </div>
+
         <div id="botoesFiltro" class="col-10 offset-1">
             <div class="row">
                 <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Pesquisar</button>
