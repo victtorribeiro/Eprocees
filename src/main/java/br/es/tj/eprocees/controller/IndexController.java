@@ -52,4 +52,14 @@ public class IndexController {
         return "selecionar_usuario";
     }
 
+    @GetMapping("/selecionar_advogado")
+    public String selecioarAdvogado() {
+        return "selecionar_advogado";
+    }
+
+    @GetMapping("/selecionar_classe")
+    public String selecionarClasse() {
+        return "selecionar_classe";
+    }
+
 }
