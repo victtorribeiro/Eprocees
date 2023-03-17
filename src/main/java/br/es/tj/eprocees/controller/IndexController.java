@@ -32,4 +32,9 @@ public class IndexController {
         return "editar_impedimento";
     }
 
+    @GetMapping("/selecionar_advogado")
+    public String selecioarAdvogado() {
+        return "selecionar_advogado";
+    }
+
 }
