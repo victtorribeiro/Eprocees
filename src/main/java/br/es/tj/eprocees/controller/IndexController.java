@@ -37,4 +37,19 @@ public class IndexController {
         return "editar_impedimento";
     }
 
+    @GetMapping("/selecionar_orgao")
+    public String selecionarOrgao() {
+        return "selecionar_orgao";
+    }
+
+    @GetMapping("/selecionar_magistrado_impedido")
+    public String selecionarMagistradoImpedimento() {
+        return "selecionar_magistrado_impedido";
+    }
+
+    @GetMapping("/selecionar_usuario")
+    public String selecionarUsuario() {
+        return "selecionar_usuario";
+    }
+
 }
