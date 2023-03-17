@@ -32,4 +32,8 @@ public class IndexController {
         return "editar_impedimento";
     }
 
+    @GetMapping("/selecionar_orgao")
+    public String selecionarOrgao() {
+        return "selecionar_orgao";
+    }
 }

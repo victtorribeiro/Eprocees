@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Orgão</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/css/index.css" media="all">
+</head>
+<body>
+    <div th:replace="navbar/navbar :: navbar"></div>
+    <div id="conteudo" class="container-fluid">
+
+        
+        <div id="cabecalhoCorpo">
+            <header>SELECIONAR CÂMARA / TURMA</header>
+        </div>
+
+        <div id="filtros" class="col-10">
+            <div class="row">
+                <label for="inputPassword" class="col-1 col-form-label fw-bold">Nome:</label>
+                <input type="text" class="col-4" id="nome">    
+            </div>
+        </div>
+
+        <div id="botoesFiltro" class="col-10">
+            <div class="row">
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Pesquisar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Cancelar/Fechar</button>
+            </div> 
+        </div>
+
+        <div id="cabecalhoCorpo">
+            <header></header>
+        </div>
+
+        <div id="resultadoConsulta" class="col-10">
+
+            <div class="col-3 mb-3" id="botoesGrid">
+                <button type="button" class="btn btn-secondary btn-sm col-3 me-3">Selecionar</button>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered">
+            <tbody>
+                <tr>
+                    <th>Selecionar</th>
+                    <th>Código</th>
+                    <th>Nome</th>
+                </tr>
+
+                <tr>
+                    <td><input type="radio" name="pessoaRelacionada" value="1"></td>
+                    <td>ART. 135 do CPC</td>
+                    <td>Andre Arnal Perenzi</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="pessoaRelacionada" value="2"></td>
+                    <td>ART. 135 do CPC</td>
+                    <td>Andre Arnal Perenzi</td>
+                </tr>
+                <tr>
+                    <td><input type="radio" name="pessoaRelacionada" value="3"></td>
+                    <td>ART. 135 do CPC</td>
+                    <td>Andre Arnal Perenzi</td>
+                </tr>
+            </tbody>
+            </table>
+        </div>
+
+    </div>
+    
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+</body>
+</html>
