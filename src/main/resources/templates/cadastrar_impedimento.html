@@ -12,13 +12,12 @@
     <div th:replace="navbar/navbar :: navbar"></div>
     <div id="conteudo" class="container-fluid">
 
-        <div class="row">
-            <div id="cabecalhoCorpo">
-                <h2>Impedimento</h2>
-            </div>
+        
+        <div id="cabecalhoCorpo">
+            <header>IMPEDIMENTO</header>
         </div>
 
-        <div id="filtros" class="col-10 offset-1">
+        <div id="filtros" class="col-10">
             <div class="row">
                 <label for="inputPassword" class="col-1 col-form-label fw-bold">Magistrado:</label>
                 <div class="col-10">
@@ -26,8 +25,8 @@
                         <div class="col-2">
                             <input type="password" class="form-control" id="MATRICULA" placeholder="Matrícula">
                         </div>
-                        <div class="col-1">
-                            <button type="button" class="btn btn-primary">lanterna</button>
+                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center" style="width: 5%;">
+                            <img class="icone-pesquisa" src="icons/search.svg">
                         </div>
                         <div class="col-8">
                             <input type="password" class="form-control" id="NOME" placeholder="Nome">
@@ -40,7 +39,7 @@
             </div>
         </div>
 
-        <div id="botoesFiltro" class="col-10 offset-1">
+        <div id="botoesFiltro" class="col-10">
             <div class="row">
                 <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Pesquisar</button>
                 <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Limpar</button>
@@ -49,8 +48,12 @@
             </div> 
         </div>
 
-        <div id="resultadoConsulta" class="col-10 offset-1">
-            <h3>Pessoas Relaciondas</h3>
+
+        <div id="cabecalhoCorpo" class="mt-5">
+            <header>PESSOAS RELACIONADAS</header>
+        </div>
+
+        <div id="resultadoConsulta" class="col-10">
 
             <div class="col-3 mb-3" id="botoesGrid">
                 <button type="button" class="btn btn-primary btn-sm col-3 me-3">Adicionar</button>

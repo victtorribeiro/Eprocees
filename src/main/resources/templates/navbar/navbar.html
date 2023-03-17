@@ -11,8 +11,8 @@
     <nav th:fragment="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <a href="index">
-                    <img src="images/brasao.jpg" width="25px" height="25px">
+                <a href="/">
+                    <img src="../images/brasao.jpg" width="25px" height="25px">
                 </a>
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item dropdown">
@@ -21,8 +21,8 @@
                             Cadastros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Pessoas</a></li>
-                            <li><a class="dropdown-item" href="/selecionar_magistrado">Cadastrar Impedimentos</a></li>
+                            <li><a class="dropdown-item" href="/cadastros/selecionar_pessoa">Pessoas</a></li>
+                            <li><a class="dropdown-item" href="/cadastrar_impedimento">Cadastrar Impedimentos</a></li>
                         </ul>
 
                     </li>
@@ -82,7 +82,7 @@
                         <a class="nav-link " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Sair
-                            <img src="icons/box-arrow-right.svg">
+                            <img src="../icons/box-arrow-right.svg">
                         </a>
                     </li>
                 </ul>
@@ -90,7 +90,6 @@
             </div>
         </div>
     </nav>
-
 </body>
 
 </html>
