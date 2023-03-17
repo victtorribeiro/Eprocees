@@ -1,7 +1,15 @@
-function selecionaTodos(){
-    $("input[name='check']").attr("checked", "checked")
-}
+function selecionaTodos(){  
+    var ele=document.getElementsByName('check');  
+    for(var i=0; i<ele.length; i++){  
+        if(ele[i].type=='checkbox')  
+        ele[i].checked=true;  
+    }  
+}  
 
 function limpaSelecao(){
-    $("input[name='check']").removeAttr('checked')
+    var ele=document.getElementsByName('check');  
+    for(var i=0; i<ele.length; i++){  
+        if(ele[i].type=='checkbox')  
+        ele[i].checked=false;  
+    }  
 }
