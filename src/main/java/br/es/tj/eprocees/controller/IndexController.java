@@ -37,4 +37,9 @@ public class IndexController {
         return "selecionar_advogado";
     }
 
+    @GetMapping("/selecionar_classe")
+    public String selecionarClasse() {
+        return "selecionar_classe";
+    }
+
 }
