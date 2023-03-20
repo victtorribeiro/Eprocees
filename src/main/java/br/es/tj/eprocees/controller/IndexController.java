@@ -62,4 +62,9 @@ public class IndexController {
         return "selecionar_classe";
     }
 
+    @GetMapping("/selecionar_relator")
+    public String selecionarRelator() {
+        return "selecionar_relator";
+    }
+
 }
