@@ -182,12 +182,12 @@
           <header class="header2">REDISTRIBUIR PROCESSO PARA</header>
           <hr class="hr" />
           <div class="container-fluid">
-            <form>
+            <form id="redistribuirParaForm">
               <label class="label col-1" for="motivo"
                 >Motivo Redistribuição:</label
               >
               <select name="motivo" id="motivo" class="col-2">
-                <option selected hidden></option>
+                <option selected="selected" hidden></option>
                 <option value="">op1</option>
                 <option value="">op2</option>
               </select>
@@ -236,9 +236,26 @@
                   rows="3"
                 ></textarea>
               </div>
+              <hr />
+              <div class="selecionarAcao">
+                <button class="btn btn-secondary btn-sm" type="button">
+                  Redistribuir
+                </button>
+                <button class="btn btn-secondary btn-sm" type="button">
+                  Resultado
+                </button>
+                <button class="btn btn-secondary btn-sm" type="button">
+                  Voltar para Lista
+                </button>
+                <button class="btn btn-secondary btn-sm" type="reset">
+                  Limpar Campos
+                </button>
+                <button class="btn btn-secondary btn-sm" type="button">
+                  Cancelar / Fechar
+                </button>
+              </div>
             </form>
           </div>
-          <dir class="selecionarAcao"></dir>
         </div>
       </div>
     </div>

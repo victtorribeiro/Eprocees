@@ -12,9 +12,14 @@ public class IndexController {
         return "index";
     }
 
-    @GetMapping("/distribuir_processos")
+    @GetMapping("/consultar_processos")
+    public String consultarProcessos() {
+        return "consultar_processos";
+    }
+
+    @GetMapping("/distribuir_processo")
     public String distribuirProcessos() {
-        return "distribuir_processos";
+        return "distribuir_processo";
     }
 
     @GetMapping("/redistribuir_processo")
