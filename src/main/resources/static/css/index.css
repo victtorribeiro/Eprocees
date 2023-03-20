@@ -65,3 +65,8 @@
 #resultadoConsulta input {
     width: 100%;
 }
+
+.campo-alfanumerico{
+    min-height: 38px;
+    max-height: 38px;
+}

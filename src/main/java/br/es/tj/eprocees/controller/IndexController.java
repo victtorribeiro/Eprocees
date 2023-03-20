@@ -67,4 +67,9 @@ public class IndexController {
         return "selecionar_classe";
     }
 
+    @GetMapping("/selecionar_processo_prevento")
+    public String selecionarProcessoPrevento() {
+        return "selecionar_processo_prevento";
+    }
+
 }
