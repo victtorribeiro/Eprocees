@@ -76,5 +76,10 @@ public class IndexController {
     public String selecionarRelator() {
         return "selecionar_relator";
     }
+    
+    @GetMapping("/consultar_historico_distribuicao")
+    public String consultarHistoricoDistribuicao() {
+        return "consultar_historico_distribuicao";
+    }
 
 }
