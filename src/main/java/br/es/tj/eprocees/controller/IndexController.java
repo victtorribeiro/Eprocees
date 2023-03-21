@@ -72,4 +72,9 @@ public class IndexController {
         return "selecionar_processo_prevento";
     }
 
+    @GetMapping("/selecionar_relaator")
+    public String selecionarRelator() {
+        return "selecionar_relator";
+    }
+
 }
