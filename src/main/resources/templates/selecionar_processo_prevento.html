@@ -1,139 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Selecionar Processo Prevento</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
-    <link rel="stylesheet" href="/css/index.css" media="all">
-</head>
-<body>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="/css/index.css" media="all" />
+  </head>
+  <body>
     <div th:replace="navbar/navbar :: navbar"></div>
     <div id="conteudo" class="container-fluid">
+      <div id="cabecalhoCorpo">
+        <header>SELECIONAR PROCESSO PREVENTO</header>
+      </div>
 
-        
-        <div id="cabecalhoCorpo">
-            <header>SELECIONAR PROCESSO PREVENTO</header>
+      <div id="filtros" class="col-10">
+        <div class="row align-items-center mb-2">
+          <label for="numeroProcesso" class="col-1 col-form-label"
+            >Autos do Processo N°:</label
+          >
+          <input
+            type="text"
+            class="col-4 campo-alfanumerico"
+            id="numeroProcesso"
+          />
+        </div>
+        <div class="row mb-2">
+          <label for="cpfcnpj" class="col-1 col-form-label">CPF/CNPJ:</label>
+          <div
+            th:replace="controles/campo_cpf_cnpj :: cpf_cnpj (id='cpfcnpj', nomeMascara='cpf_cnpj', class='col-4')"
+          ></div>
+        </div>
+        <div class="row align-items-center mb-2">
+          <label for="nome" class="col-1 col-form-label">Nome da Parte:</label>
+          <input type="text" class="col-5 campo-alfanumerico" id="nome" />
         </div>
 
-        <div id="filtros" class="col-10">
-            <div class="row align-items-center mb-2">
-                <label for="numeroProcesso" class="col-1 col-form-label">Autos do Processo N°:</label>
-                <input type="text" class="col-4 campo-alfanumerico" id="numeroProcesso">    
-            </div>
-            <div class="row mb-2">
-                <label for="cpfcnpj" class="col-1 col-form-label">CPF/CNPJ:</label>
-                <div th:replace="controles/campo_cpf_cnpj :: cpf_cnpj (id='cpfcnpj', nomeMascara='cpf_cnpj', class='col-4')"></div>
-            </div>
-            <div class="row align-items-center mb-2">
-                <label for="nome" class="col-1 col-form-label">Nome da Parte:</label>
-                <input type="text" class="col-5 campo-alfanumerico" id="nome">    
-            </div>
-
-            <div class="row align-items-center mb-2">
-                <label for="advogado" class="col-1 col-form-label">Advogado:</label>
-                <div class="col-6">
-                    <div class="row">
-                        <input type="text" class="col-2 campo-alfanumerico" id="oab">
-
-                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center" style="width: 5%;">
-                            <img class="icone-pesquisa" src="icons/search.svg">
-                        </div>
-
-                        <input type="text" class="col-9 campo-alfanumerico" id="nomeAdvogado">
-                        
-                    </div>
-                </div>
-            </div>
-
-            <div class="row align-items-center mb-2">
-                <label for="classe" class="col-1 col-form-label">Classe:</label>
-                <div class="col-6">
-                    <div class="row">
-
-                        <input type="text" class="col-2 campo-alfanumerico" id="codigoClasse">
-
-                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center" style="width: 5%;">
-                            <img class="icone-pesquisa" src="icons/search.svg">
-                        </div>
-
-                        <input type="text" class="col-9 campo-alfanumerico" id="nomeClasse">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="botoesFiltro" class="col-10">
+        <div class="row align-items-center mb-2">
+          <label for="advogado" class="col-1 col-form-label">Advogado:</label>
+          <div class="col-6">
             <div class="row">
-                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Pesquisar</button>
-                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Limpar</button>
-                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Cancelar/Fechar</button>
-            </div> 
-        </div>
+              <input type="text" class="col-2 campo-alfanumerico" id="oab" />
 
-        <div id="cabecalhoCorpo">
-            <header></header>
-        </div>
+              <div
+                class="col-1 align-content-center align-items-center d-flex justify-content-center"
+                style="width: 5%"
+              >
+                <img class="icone-pesquisa" src="icons/search.svg" />
+              </div>
 
-        <div id="resultadoConsulta" class="col-10">
-
-            <div class="col-3 mb-3" id="botoesGrid">
-                <button type="button" class="btn btn-secondary btn-sm col-3 me-3">Selecionar</button>
+              <input
+                type="text"
+                class="col-9 campo-alfanumerico"
+                id="nomeAdvogado"
+              />
             </div>
-
-            <table class="table table-striped table-hover table-bordered">
-            <tbody>
-                <tr>
-                    <th class="coluna-selecionar">Selecionar</th>
-                    <th>Sistema</th>
-                    <th>Autos do Processo Número</th>
-                    <th>Parte Ativa</th>
-                    <th>Parte Passiva</th>
-                    <th>Classe</th>
-                    <th>Especialidade</th>
-                    <th>Data Ajuizamento</th>
-                </tr>
-
-                <tr>
-                    <td><input type="radio" name="pessoaRelacionada" value="1"></td>
-                    <td>EPROCEES</td>
-                    <td>123-123-123-123</td>
-                    <td>José da Silva Nogueira</td>
-                    <td>João Vicente da Cunha</td>
-                    <td>Primeira Classe</td>
-                    <td>Jurisprudencia</td>
-                    <td>20/04/2002</td>
-                </tr>
-                <tr>
-                    <td><input type="radio" name="pessoaRelacionada" value="2"></td>
-                    <td>EPROCEES</td>
-                    <td>123-123-123-123</td>
-                    <td>José da Silva Nogueira</td>
-                    <td>João Vicente da Cunha</td>
-                    <td>Primeira Classe</td>
-                    <td>Jurisprudencia</td>
-                    <td>20/04/2002</td>
-                </tr>
-                <tr>
-                    <td><input type="radio" name="pessoaRelacionada" value="3"></td>
-                    <td>EPROCEES</td>
-                    <td>123-123-123-123</td>
-                    <td>José da Silva Nogueira</td>
-                    <td>João Vicente da Cunha</td>
-                    <td>Primeira Classe</td>
-                    <td>Jurisprudencia</td>
-                    <td>20/04/2002</td>
-                </tr>
-            </tbody>
-            </table>
+          </div>
         </div>
 
+        <div class="row align-items-center mb-2">
+          <label for="classe" class="col-1 col-form-label">Classe:</label>
+          <div class="col-6">
+            <div class="row">
+              <input
+                type="text"
+                class="col-2 campo-alfanumerico"
+                id="codigoClasse"
+              />
+
+              <div
+                class="col-1 align-content-center align-items-center d-flex justify-content-center"
+                style="width: 5%"
+              >
+                <img class="icone-pesquisa" src="icons/search.svg" />
+              </div>
+
+              <input
+                type="text"
+                class="col-9 campo-alfanumerico"
+                id="nomeClasse"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="botoesFiltro" class="col-10">
+        <div class="row">
+          <button type="button" class="btn btn-secondary btn-sm col-1 me-3">
+            Pesquisar
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm col-1 me-3">
+            Limpar
+          </button>
+          <button type="button" class="btn btn-secondary btn-sm col-1 me-3">
+            Cancelar/Fechar
+          </button>
+        </div>
+      </div>
+
+      <div id="cabecalhoCorpo">
+        <header></header>
+      </div>
+
+      <div id="resultadoConsulta" class="col-10">
+        <div class="col-3 mb-3" id="botoesGrid">
+          <button type="button" class="btn btn-secondary btn-sm col-3 me-3">
+            Selecionar
+          </button>
+        </div>
+
+        <table class="table table-striped table-hover table-bordered">
+          <tbody>
+            <tr>
+              <th class="coluna-selecionar">Selecionar</th>
+              <th>Sistema</th>
+              <th>Autos do Processo Número</th>
+              <th>Parte Ativa</th>
+              <th>Parte Passiva</th>
+              <th>Classe</th>
+              <th>Especialidade</th>
+              <th>Data Ajuizamento</th>
+            </tr>
+
+            <tr>
+              <td><input type="radio" name="pessoaRelacionada" value="1" /></td>
+              <td>EPROCEES</td>
+              <td>123-123-123-123</td>
+              <td>José da Silva Nogueira</td>
+              <td>João Vicente da Cunha</td>
+              <td>Primeira Classe</td>
+              <td>Jurisprudencia</td>
+              <td>20/04/2002</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="pessoaRelacionada" value="2" /></td>
+              <td>EPROCEES</td>
+              <td>123-123-123-123</td>
+              <td>José da Silva Nogueira</td>
+              <td>João Vicente da Cunha</td>
+              <td>Primeira Classe</td>
+              <td>Jurisprudencia</td>
+              <td>20/04/2002</td>
+            </tr>
+            <tr>
+              <td><input type="radio" name="pessoaRelacionada" value="3" /></td>
+              <td>EPROCEES</td>
+              <td>123-123-123-123</td>
+              <td>José da Silva Nogueira</td>
+              <td>João Vicente da Cunha</td>
+              <td>Primeira Classe</td>
+              <td>Jurisprudencia</td>
+              <td>20/04/2002</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    
+
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="jquery/jquery-3.6.4.min.js"></script>
     <script src="jquery_mask/jquery.mask.min.js"></script>
     <script src="js/mascara.js"></script>
-</body>
+  </body>
 </html>
