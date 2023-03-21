@@ -72,4 +72,8 @@ public class IndexController {
         return "selecionar_processo_prevento";
     }
 
+    @GetMapping("/cancelar_distribuicao_redistribuicao")
+    public String cancelarDistribuicaoRedistribuicao() {
+        return "cancelar_distribuicao_redistribuicao";
+    }
 }

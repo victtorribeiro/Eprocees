@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cancelar Distribuição/Redistribuição</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="/css/index.css" media="all" />
+</head>
+
+<body>
+    <div th:replace="navbar/navbar :: navbar"></div>
+    <div id="conteudo" class="container-fluid">
+        <div id="cabecalhoCorpo">
+            <header>CANCELAR DISTRIBUIÇÃO/REDISTRIBUIÇÃO</header>
+        </div>
+
+        <div id="filtros" class="col-10">
+            <form id="formCancelar" action="">
+                <div class="row align-items-center mb-2">
+                    <label for="numeroProcesso" class="col-1 col-form-label">Número do Processo:</label>
+                    <input type="text" class="col-4 campo-alfanumerico" id="numeroProcesso" />
+                </div>
+                <div class="row mb-2 align-items-center">
+                    <label for="tipoDistribuicao" class="col-1 col-form-label">Tipo de Distribuição:</label>
+                    <div class="col-2">
+                        <div class="row">
+                            <select name="" id="tipoDistribuicao">
+                                <option value="" selected hidden></option>
+                                <option value="">Opção 1</option>
+                                <option value="">Opção 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2 align-items-center">
+                    <label for="orgao" class="col-1 col-form-label">Órgão:</label>
+                    <div class="col-2">
+                        <div class="row">
+                            <select name="" id="orgao">
+                                <option value="" selected hidden></option>
+                                <option value="">Opção 1</option>
+                                <option value="">Opção 2</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-2 align-items-center">
+                    <label for="magistrado" class="col-1 col-form-label">Magistrado:</label>
+                    <input type="text" class="col-2 campo-alfanumerico" id="magistrado" />
+                </div>
+
+                <div class="row align-items-center">
+                    <label for="periodoDistribuicao" class="col-1 col-form-label">Período de Distribuição:</label>
+                </div>
+            </form>
+        </div>
+
+        <div id="botoesFiltro" class="col-12">
+            <div class="row">
+                <hr />
+            </div>
+            <div class="row">
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">
+                    Pesquisar
+                </button>
+                <button form="formCancelar" type="reset" class="btn btn-secondary btn-sm col-1 me-3">
+                    Limpar
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">
+                    Fechar/Cancelar
+                </button>
+            </div>
+            <div class="row mt-3">
+                <hr />
+            </div>
+        </div>
+
+        <div id="resultadoConsulta" class="col-10">
+            <table class="table table-striped table-hover table-bordered">
+                <header class="header" id="cabecalhoCorpo">
+                    DISTRIBUIÇÕES DO PROCESSO
+                </header>
+                <tbody>
+                    <tr>
+                        <th class="coluna-selecionar">SELECIONAR</th>
+                        <th>DETALHES</th>
+                        <th>NÚMERO DO PROCESSO</th>
+                        <th>TIPO DE DISTRIBUIÇÃO</th>
+                        <th>ÓRGÃO</th>
+                        <th>MAGISTRADO</th>
+                        <th>DISTRIBUÍDO POR</th>
+                        <th>DATA DE DISTRIBUIÇÃO</th>
+                        <th>OBSERVAÇÃO</th>
+                    </tr>
+
+                    <tr>
+                        <td><input type="radio" name="pessoaRelacionada" value="1" /></td>
+                        <td>--MOSTRAR</td>
+                        <td>123-123-123-123</td>
+                        <td>REDISTRIBUIÇÃO MOTIVADA</td>
+                        <td>SEGUNDA CAMARA CRIMINAL</td>
+                        <td>EDER PONTES</td>
+                        <td>MANOELITA GONÇALVES</td>
+                        <td>20/04/2002</td>
+                        <td>ART. 117</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="botoesFiltro">
+            <button form="formCancelar" class="btn btn-secondary">Cancelar Distribuição</button>
+    
+        </div>
+    </div>
+
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="jquery_mask/jquery.mask.min.js"></script>
+    <script src="js/mascara.js"></script>
+</body>
+
+</html>

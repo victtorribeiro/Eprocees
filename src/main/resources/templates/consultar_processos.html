@@ -31,8 +31,13 @@
         /><br />
         <label class="label col-2" for="nomeParte">Nome da Parte:</label>
         <input type="text" id="nomeParte" name="nomeParte" />
-        <label class="label" for="cpfCnpj">CPF/CNPJ:</label>
-        <input type="text" id="cpfCnpj" name="cpfCnpj" /><br />
+
+        <label class="label" for="cpfcnpj">CPF/CNPJ:</label>
+        <div
+          th:replace="controles/campo_cpf_cnpj :: cpf_cnpj (id='cpfcnpj', nomeMascara='cpf_cnpj', class='col-4')"
+        ></div>
+        <br />
+
         <label class="label col-2" for="advogado">Advogado:</label>
         <input
           class="col-1"
@@ -136,6 +141,7 @@
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="jquery/jquery-3.6.4.min.js"></script>
-    <script src="js/reseta_formulario.js"></script>
+    <script src="jquery_mask/jquery.mask.min.js"></script>
+    <script src="js/mascara.js"></script>
   </body>
 </html>
