@@ -72,4 +72,9 @@ public class IndexController {
         return "selecionar_processo_prevento";
     }
 
+    @GetMapping("/consultar_historico_distribuicao")
+    public String consultarHistoricoDistribuicao() {
+        return "consultar_historico_distribuicao";
+    }
+
 }

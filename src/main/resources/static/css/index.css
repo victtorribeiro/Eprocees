@@ -70,3 +70,13 @@
     min-height: 38px;
     max-height: 38px;
 }
+
+.input-data {
+    width: 95px;
+    padding: 3px 5px;
+    border: 1px solid #767676;
+}
+
+.input-group.date {
+    padding: 0;
+}

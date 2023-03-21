@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auditoria da Distribuição</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all">
+    <link rel="stylesheet" href="/css/index.css" media="all">
+    <link rel="stylesheet" href="/bootstrap_datepicker/bootstrap-datepicker.min.css" media="all">
+    <link rel="stylesheet" href="/fontawesome_free_6_3_0/all.min.css" media="all">
+    
+</head>
+
+<body>
+    <div th:replace="navbar/navbar :: navbar"></div>
+    <div id="conteudo" class="container-fluid">
+
+
+        <div id="cabecalhoCorpo">
+            <header>AUDITORIA DA DISTRIBUIÇÃO</header>
+        </div>
+
+        <div id="filtros" class="col-10">
+            <div class="row align-items-center mb-2">
+                <label for="numeroProcesso" class="col-1 col-form-label">Autos do Processo N°:</label>
+                <input type="text" class="col-4 campo-alfanumerico" id="numeroProcesso">
+            </div>
+            <div class="row align-items-center mb-2">
+                <label for="nome" class="col-1 col-form-label">Nome da Parte:</label>
+                <input type="text" class="col-5 campo-alfanumerico" id="nome">
+            </div>
+
+            <div class="row align-items-center mb-2">
+                <label for="usuario" class="col-1 col-form-label">Usuário:</label>
+                <div class="col-6">
+                    <div class="row">
+                        <input type="text" class="col-2 campo-alfanumerico" id="userName">
+
+                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center"
+                            style="width: 5%;">
+                            <img class="icone-pesquisa" src="icons/search.svg">
+                        </div>
+
+                        <input type="text" class="col-9 campo-alfanumerico" id="usuario">
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-2">
+                <label for="classe" class="col-1 col-form-label">Classe:</label>
+                <div class="col-6">
+                    <div class="row">
+
+                        <input type="text" class="col-2 campo-alfanumerico" id="codigoClasse">
+
+                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center"
+                            style="width: 5%;">
+                            <img class="icone-pesquisa" src="icons/search.svg">
+                        </div>
+
+                        <input type="text" class="col-9 campo-alfanumerico" id="nomeClasse">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-2">
+                <label for="classe" class="col-1 col-form-label">Período:</label>
+                <div class="col-6">
+                    <div class="row align-items-center">
+
+                        <div class="col-auto">
+                            <div class="row">
+                                <div th:replace="controles/campo_data :: data_datepicker (id='dtInicio', class='')"></div>
+                            </div>
+                        </div>
+
+                        <p class="col-1 align-content-center align-items-center d-flex justify-content-center mb-0"
+                            style="width: 5%;">a</p>
+
+                        <div class="col-auto">
+                            <div class="row">
+                                <div th:replace="controles/campo_data :: data_datepicker (id='dtFim', class='')"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-2">
+                <label for="classe" class="col-1 col-form-label">Relator:</label>
+                <div class="col-6">
+                    <div class="row">
+
+                        <input type="text" class="col-2 campo-alfanumerico" id="cdMatriculaRh">
+
+                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center"
+                            style="width: 5%;">
+                            <img class="icone-pesquisa" src="icons/search.svg">
+                        </div>
+
+                        <input type="text" class="col-9 campo-alfanumerico" id="dsRelator">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-2">
+                <label for="classe" class="col-1 col-form-label">Orgão:</label>
+                <div class="col-6">
+                    <div class="row">
+
+                        <input type="text" class="col-2 campo-alfanumerico" id="cdCamara">
+
+                        <div class="col-1 align-content-center align-items-center d-flex justify-content-center"
+                            style="width: 5%;">
+                            <img class="icone-pesquisa" src="icons/search.svg">
+                        </div>
+
+                        <input type="text" class="col-9 campo-alfanumerico" id="dsCamara">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row align-items-center mb-2">
+                <div class="col-6">
+                    <div class="row">
+                        <p class="col-auto mb-0">Relatório Estatístico</p>
+                        <div class="btn btn-secondary btn-sm me-3 col-auto">Por Pessoa</div>
+                        <div class="btn btn-secondary btn-sm me-3 col-auto">Por Comarca</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="botoesFiltro" class="col-10">
+            <div class="row">
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Pesquisar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Limpar</button>
+                <button type="button" class="btn btn-secondary btn-sm col-1 me-3">Cancelar/Fechar</button>
+            </div>
+        </div>
+
+        <div id="cabecalhoCorpo">
+            <header>Processos Distribuídos</header>
+        </div>
+
+        <div id="resultadoConsulta" class="col-10">
+
+            <div class="col-3 mb-3" id="botoesGrid">
+                <button type="button" class="btn btn-secondary btn-sm col-3 me-3">Resultado</button>
+            </div>
+
+            <table class="table table-striped table-hover table-bordered">
+                <tbody>
+                    <tr>
+                        <th class="coluna-selecionar">Selecionar</th>
+                        <th>Autos do Processo Número</th>
+                        <th>Especialidade</th>
+                        <th>Classe</th>
+                        <th>Parte Ativa</th>
+                        <th>Parte Passiva</th>
+                        <th>Data Ajuizamento</th>
+                    </tr>
+
+                    <tr>
+                        <td><input type="radio" name="pessoaRelacionada" value="1"></td>
+                        <td>123-123-123-123</td>
+                        <td>Jurisprudencia</td>
+                        <td>Primeira Classe</td>
+                        <td>José da Silva Nogueira</td>
+                        <td>João Vicente da Cunha</td>
+                        <td>20/04/2002</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="pessoaRelacionada" value="2"></td>
+                        <td>123-123-123-123</td>
+                        <td>Jurisprudencia</td>
+                        <td>Primeira Classe</td>
+                        <td>José da Silva Nogueira</td>
+                        <td>João Vicente da Cunha</td>
+                        <td>20/04/2002</td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="pessoaRelacionada" value="3"></td>
+                        <td>123-123-123-123</td>
+                        <td>Jurisprudencia</td>
+                        <td>Primeira Classe</td>
+                        <td>José da Silva Nogueira</td>
+                        <td>João Vicente da Cunha</td>
+                        <td>20/04/2002</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="cabecalhoCorpo">
+            <header>Histórico de Distribuição</header>
+        </div>
+
+        <div id="resultadoConsulta" class="col-10">
+
+            <table class="table table-striped table-hover table-bordered">
+                <tbody>
+                    <tr>
+                        <th class="coluna-selecionar">Detalhes</th>
+                        <th>Data da Distribuição</th>
+                        <th>Tipo da Distribuição</th>
+                        <th>Órgão Distribuído</th>
+                        <th>Magistrado Distribuído</th>
+                        <th>Órgão Participantes</th>
+                        <th>Magistrados Participantes</th>
+                        <th>Magistrados Impedidos</th>
+                        <th>Usuário Responsavel</th>
+                        <th>Composição de Câmara</th>
+                    </tr>
+
+                    <tr>
+                        <td><a href="">Mostrar</a></td>
+                        <td>20/04/2002</td>
+                        <td>Distribuição Automática</td>
+                        <td>Câmara Municipal</td>
+                        <td>André Guedes</td>
+                        <td>Câmara Municipal, Câmara Federal, Conselho dos Advogados</td>
+                        <td>André Guedes, Arnaldo Batista, João Vicente da Cunha</td>
+                        <td>Otávio Antônio</td>
+                        <td>Willy</td>
+                        <td>SIM</td>
+                    </tr>
+                    <tr>
+                        <td><a href="">Mostrar</a></td>
+                        <td>20/04/2002</td>
+                        <td>Distribuição Automática</td>
+                        <td>Câmara Municipal</td>
+                        <td>André Guedes</td>
+                        <td>Câmara Municipal, Câmara Federal, Conselho dos Advogados</td>
+                        <td>André Guedes, Arnaldo Batista, João Vicente da Cunha</td>
+                        <td>Otávio Antônio</td>
+                        <td>Willy</td>
+                        <td>SIM</td>
+                    </tr>
+                    <tr>
+                        <td><a href="">Mostrar</a></td>
+                        <td>20/04/2002</td>
+                        <td>Distribuição Automática</td>
+                        <td>Câmara Municipal</td>
+                        <td>André Guedes</td>
+                        <td>Câmara Municipal, Câmara Federal, Conselho dos Advogados</td>
+                        <td>André Guedes, Arnaldo Batista, João Vicente da Cunha</td>
+                        <td>Otávio Antônio</td>
+                        <td>Willy</td>
+                        <td>SIM</td><td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery-3.6.4.min.js"></script>
+    <script src="jquery_mask/jquery.mask.min.js"></script>
+    <script src="bootstrap_datepicker/bootstrap-datepicker.min.js"></script>
+    <script src="bootstrap_datepicker/bootstrap-datepicker.pt-BR.min.js"></script>
+    <script src="/fontawesome_free_6_3_0/all.min.js"></script>
+    <script src="js/mascara.js"></script>
+    <script src="js/data_datepicker.js"></script>
+    
+</body>
+
+</html>
