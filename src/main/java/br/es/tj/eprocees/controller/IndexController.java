@@ -72,7 +72,7 @@ public class IndexController {
         return "selecionar_processo_prevento";
     }
 
-    @GetMapping("/selecionar_relaator")
+    @GetMapping("/selecionar_relator")
     public String selecionarRelator() {
         return "selecionar_relator";
     }
@@ -85,5 +85,10 @@ public class IndexController {
     @GetMapping("/cancelar_distribuicao_redistribuicao")
     public String cancelarDistribuicaoRedistribuicao() {
         return "cancelar_distribuicao_redistribuicao";
+    }
+
+    @GetMapping("/teste_modal")
+    public String testemodal() {
+        return "teste/teste_modal";
     }
 }
