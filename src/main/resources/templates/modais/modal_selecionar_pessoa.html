@@ -1,0 +1,180 @@
+<div th:fragment="modal_selecionar_pessoa (modalAnterior)" class="modal fade" id="modalSelecionarPessoa" tabindex="-1"
+    aria-labelledby="modalSelecionarPessoa" aria-hidden="true" data-bs-backdrop="static">
+    <div class="modal-dialog modal-xl modal-fullscreen-lg-down">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">BUSCAR PESSOA</h5>
+                <button type="button" class="btn-close" aria-label="Close" data-bs-toggle="modal"
+                    th:data-bs-target="|#${modalAnterior}|" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-fluid">
+                    <form>
+                        <div class="col-12">
+                            <input id="pessoa_fisica" class="form-check-input col-auto me-1" type="radio" value="visivel"
+                                onclick="mostrarPessoaFisicaOuJuridica('fisica')" name="lang" checked>
+                            <label for="pessoa_fisica" class="col-auto me-4">Pessoa Física</label>
+                            <input id="pessoa_juridica" class="form-check-input col-auto me-1" type="radio" value="visivel"
+                                onclick="mostrarPessoaFisicaOuJuridica('juridica')" name="lang">
+                            <label for="pessoa_juridica" class="col-auto me-1">Pessoa Jurídica</label>
+                        </div>
+                        <div id="pessoaFisica" class="col-12">
+                            <div class="row mb-2">
+                                <label class="col-2" for="cpf">CPF:</label>
+                                <!-- <input type="text" class="col-lg-2" id="cpf" name="cpf" onkeypress="$(this).mask('000.000.000-00');" placeholder="000.000.000-00"/><br /> -->
+                                <div class="col-2">
+                                    <div
+                                        th:replace="controles/campo_cpf_cnpj :: cpf_cnpj (id='cpf', nomeMascara='cpf', class='col-lg-2 form-control')">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <label class="col-2" for="nome_pessoa">Nome da pessoa:</label>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="nome_pessoa" name="nome_pessoa" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <label class="col-2" for="nome_mae">Nome da Mãe:</label>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="nome_mae" name="nome_mae" />
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <label class="col-2" for="data_nascimento">Data de Nascimento:</label>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="pessoaJuridica" class="col-12" style="display: none;">
+
+                            <div class="row mb-2">
+                                <label class="col-2" for="cnpj">CNPJ:</label>
+                                <!-- <input type="text" class="col-lg-2" id="cnpj" name="cnpj" onkeypress="$(this).mask('00.000.000/0000-00');" placeholder="00.000.000/0000-00" /><br /> -->
+                                <div class="col-2">
+                                    <div
+                                        th:replace="controles/campo_cpf_cnpj :: cpf_cnpj (id='cnpj', nomeMascara='cnpj', class='form-control')">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-2">
+                                <label class="col-2" for="razao_social">Nome Fantasia / Razão Social:</label>
+                                <div class="col-2">
+                                    <input type="text" class="form-control" id="razao_social" name="razao_social" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="container-fluid">
+                    <hr />
+                </div>
+                <div class="container-fluid">
+                    <div class="">
+                        <button type="button" class="btn btn-sm col-auto btnCorSistema">Pesquisar</button>
+                        <button type="button" class="btn btn-sm col-auto btnCorSistema">Limpar</button>
+                        <button type="button" class="btn btn-sm col-auto btnCorSistema">
+                            Cancelar/Fechar
+                        </button>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <hr />
+                </div>
+                <div class="container-fluid">
+                    <div id="tabelaPessoaFisica">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>SELECIONAR</th>
+                                    <th>NOME</th>
+                                    <th>CPF</th>
+                                    <th>NOME DA MÃE</th>
+                                    <th>DATA DE NASCIMENTO</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <form>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="nome1_aqui" name="radios" value="Teste" />
+                                        </td>
+                                        <td>nome</td>
+                                        <td>cpf</td>
+                                        <td>nome_mae</td>
+                                        <td>data_nascimento</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="nome2_aqui" name="radios" value="Teste" />
+                                        </td>
+                                        <td>nome</td>
+                                        <td>cpf</td>
+                                        <td>nome_mae</td>
+                                        <td>data_nascimento</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="nome3_aqui" name="radios" value="Teste" />
+                                        </td>
+                                        <td>nome</td>
+                                        <td>cpf</td>
+                                        <td>nome_mae</td>
+                                        <td>data_nascimento</td>
+                                    </tr>
+                                </form>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="tabelaPessoaJuridica" style="display: none;">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>SELECIONAR</th>
+                                    <th>CNPJ</th>
+                                    <th>NOME FANTASIA / RAZÃO SOCIAL</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <form>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="nome1_aqui" name="radios" value="Teste" />
+                                        </td>
+                                        <td>cnpj</td>
+                                        <td>nome fantasia / Razão social</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="nome2_aqui" name="radios" value="Teste" />
+                                        </td>
+                                        <td>cnpj</td>
+                                        <td>nome fantasia / Razão social</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <input type="radio" id="nome3_aqui" name="radios" value="Teste" />
+                                        </td>
+                                        <td>cnpj</td>
+                                        <td>nome fantasia / Razão social</td>
+                                    </tr>
+                                </form>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
+                    th:data-bs-target="|#${modalAnterior}|" data-bs-dismiss="modal">Cancelar/Voltar</button>
+            </div>
+        </div>
+    </div>
+</div>
