@@ -86,4 +86,9 @@ public class IndexController {
     public String cancelarDistribuicaoRedistribuicao() {
         return "cancelar_distribuicao_redistribuicao";
     }
+
+    @GetMapping("/teste_modal")
+    public String testemodal() {
+        return "teste/teste_modal";
+    }
 }

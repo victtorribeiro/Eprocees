@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cancelar Distribuição/Redistribuição</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+  <link rel="stylesheet" href="/css/index.css" media="all" />
+  <link rel="stylesheet" href="/fontawesome_free_6_3_0/all.min.css" media="all">
+</head>
+
+<body>
+
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalEditarImpedimento"
+    data-bs-whatevre="@mdo">Open modal for @mdo</button>
+
+  <div th:replace="modais/modal_editar_impedimento:: modal_editar_impedimento"></div>
+
+  <div th:replace="modais/modal_selecionar_pessoa :: modal_selecionar_pessoa (modalAnterior='modalEditarImpedimento')"></div>
+
+
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+  <script src="jquery/jquery-3.6.4.min.js"></script>
+  <script src="jquery_mask/jquery.mask.min.js"></script>
+  <script src="js/mascara.js"></script>
+  <script src="../js/alterar_pessoa.js"></script>
+  <script src="/fontawesome_free_6_3_0/all.min.js"></script>
+</body>
+
+</html>
