@@ -4,102 +4,72 @@
     <div class="modal-dialog modal-xl modal-fullscreen-lg-down">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">ADICIONAR/EDITAR IMPEDIMENTO</h5>
+                <h5 class="modal-title" id="exampleModalLabel">DADOS DO IMPEDIMENTO</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form action="">
-                    <div id="filtros" class="col-10">
-                        <div class="row">
-                            <label for="inputPassword" class="col-auto col-form-label fw-bold">Magistrado:</label>
-                            <div class="col-9">
-                                <div class="row">
-                                    <div class="input-group">
-                                        <div class="col-2">
-                                            <input type="password" class="form-control" id="MATRICULA" placeholder="Matrícula">
-                                        </div>
-                                        <div class="input-group-text" data-bs-toggle="modal" data-bs-target="#modalSelecionarPessoa">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </div>
-                                        <div class="col-8">
-                                            <input type="password" class="form-control" id="NOME" placeholder="Nome">
+                <div id="conteudoFormulario" class="col-12">
+                    <form>
+                        <div class="row align-items-start">
+                            <div class="mb-0">
+                                <p><strong>Magistrado: ANNIBAL DE REZENDE LIMA</strong></p>
+                            </div>
+                            <div class="mb-1 row align-items-start">
+                                <label for="pessoa" class="form-label col-2">Pessoa:</label>
+                                <!-- <input type="text" class="col-4" id="pessoa" style="width: 31%;">
+                                <div class="col-1" style="width: 3%;">
+                                    <img class="icone-pesquisa" src="icons/search.svg">
+                                </div> -->
+                                <div class="col-4">
+                                    <div class="row">
+                                        <div class="input-group pe-0 ps-0">
+                                            <input type="text" class="form-control" id="pessoa">
+                                            <div class="input-group-text" data-bs-toggle="modal" data-bs-target="#modalSelecionarPessoa">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
-                            <div class="col-12 mt-2">
-                                <p class="mb-0"><strong>DICA:</strong> Informe o magistrado desejado para vizualizar pessoas
-                                    que geram impedimento.</p>
+
+                            <div class="mb-1 row align-items-start">
+                                <label for="motivo" class="form-label col-2">Motivo:</label>
+                                <div class="col-4 pe-0 ps-0">
+                                    <select name="motivo" id="motivo" class="form-control">
+                                        <option value=""></option>
+                                        <option value="motivo1">Motivo 1</option>
+                                        <option value="motivo2">Motivo 2</option>
+                                        <option value="motivo3">Motivo 3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-1 row align-items-start">
+                                <label for="tipo" class="form-label col-2">Tipo:</label>
+                                <div class="col-4 pe-0 ps-0">
+                                    <select name="tipo" id="tipo" class="form-control">
+                                        <option value=""></option>
+                                        <option value="tipo1">Tipo 1</option>
+                                        <option value="tipo2">Tipo 2</option>
+                                        <option value="tipo3">Tipo 3</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-1 row align-items-start">
+                                <label for="observacao" class="form-label col-2">Observação:</label>
+                                <div class="col-4 pe-0 ps-0">
+                                    <textarea name="observacao" id="observacao" cols="30" rows="7" class="form-control"></textarea>
+                                </div>
                             </div>
                         </div>
-                    </div>
-    
-                    <div id="botoesFiltro" class="col-10">
-                        <div class="row">
-                            <button type="button" class="btn btn-secondary btn-sm col-auto me-3">Pesquisar</button>
-                            <button type="button" class="btn btn-secondary btn-sm col-auto me-3">Limpar</button>
-                            <button type="button" class="btn btn-secondary btn-sm col-auto me-3">Imprimir</button>
-                            <button type="button" class="btn btn-secondary btn-sm col-auto me-3">Cancelar/Fechar</button>
-                        </div>
-                    </div>
-
-                </form>
-
-
-                <div id="cabecalhoCorpo" class="mt-5">
-                    <header>PESSOAS RELACIONADAS</header>
+                    </form>
                 </div>
-
-                <div id="resultadoConsulta" class="col-10">
-
-                    <div class="col-6 mb-3" id="botoesGrid">
-                        <button type="button" class="btn btn-primary btn-sm col-auto me-3">Adicionar</button>
-                        <button type="button" class="btn btn-secondary btn-sm col-auto me-3">Editar</button>
-                        <button type="button" class="btn btn-secondary btn-sm col-auto me-3">Excluir</button>
-                    </div>
-
-                    <table class="table table-striped table-hover table-bordered">
-                        <tbody>
-                            <tr>
-                                <th class="coluna-selecionar">Selecionar</th>
-                                <th>Pessoa</th>
-                                <th>Motivo</th>
-                                <th>Tipo</th>
-                                <th>Observação</th>
-                            </tr>
-
-                            <tr>
-                                <td><input type="radio" name="pessoaRelacionada" value="1"></td>
-                                <td>Andre Arnal Perenzi</td>
-                                <td>ART. 135 do CPC</td>
-                                <td>Advogado</td>
-                                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley</td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" name="pessoaRelacionada" value="2"></td>
-                                <td>Andre Arnal Perenzi</td>
-                                <td>ART. 135 do CPC</td>
-                                <td>Advogado</td>
-                                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley</td>
-                            </tr>
-                            <tr>
-                                <td><input type="radio" name="pessoaRelacionada" value="3"></td>
-                                <td>Andre Arnal Perenzi</td>
-                                <td>ART. 135 do CPC</td>
-                                <td>Advogado</td>
-                                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                                    Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-                                    unknown printer took a galley</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+        
             </div>
             <div class="modal-footer">
+                <button type="submit" class="btn btn-primary btn-sm">Salvar</button>
                 <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal"
                     data-bs-dismiss="modal">Cancelar/Voltar</button>
             </div>

@@ -46,7 +46,8 @@
                             <div class="row mb-2">
                                 <label class="col-2" for="data_nascimento">Data de Nascimento:</label>
                                 <div class="col-2">
-                                    <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" />
+                                    <div th:replace="controles/campo_data :: data_datepicker (id='data_nascimento', class='', name='data_nascimento')"></div>
+                                    <!-- <input type="text" class="form-control" id="data_nascimento" name="data_nascimento" /> -->
                                 </div>
                             </div>
 
