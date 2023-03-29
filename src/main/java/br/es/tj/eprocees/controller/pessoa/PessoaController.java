@@ -16,7 +16,7 @@ public class PessoaController {
     @GetMapping("/")
     public String findById() {
         Pessoa pessoa = pessoaService.findById().get();
-        System.out.println(pessoa.getPessoaJuridica().getDsNomeFantasia());
+        System.out.println(pessoa.getPessoaFisica().getCpf().getNumeroCpf());
         return "/index.html";
     }
 }
