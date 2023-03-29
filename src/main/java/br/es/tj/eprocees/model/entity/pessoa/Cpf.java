@@ -7,30 +7,27 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
-import javax.persistence.PrimaryKeyJoinColumn;
 
 import lombok.Data;
 
 @Entity
 @Data
-public class Pessoa {
+public class Cpf {
+
     @Id
-    @Column(name = "ID_PESSOA")
+    @Column(name = "ID_CPF")
     private Integer id;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "pessoa")
-    @PrimaryKeyJoinColumn
-    private PessoaJuridica pessoaJuridica;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ID_PESSOA_FISICA", referencedColumnName = "ID_PESSOA_FISICA")
+    private PessoaFisica idPessoaFisica;
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "pessoa")
-    @PrimaryKeyJoinColumn
-    private PessoaFisica pessoaFisica;
+    @Column(name = "NO_CPF")
+    private String numeroCpf;
 
-    @ManyToOne
-    @JoinColumn(name = "ID_TIPO_PESSOA")
-    private TipoPessoa tipoPessoa;
+    @Column(name = "DT_EMISSAO_CPF")
+    private Date dataEmissaoCpf;
 
     @Column(name = "ID_USUARIO_CRIACAO")
     private Integer idUsuarioCriacao;
@@ -48,14 +45,5 @@ public class Pessoa {
     private Integer idUsuarioExclusao;
 
     @Column(name = "DT_USUARIO_EXCLUSAO")
-    private Integer dataUsuarioExclusao;
-
-    @Column(name = "CD_PESSOA")
-    private String cdPessoa;
-
-    @Column(name = "CD_MIGRA_PROJUDI")
-    private Integer cdMigraProjudi;
-
-    @Column(name = "ID_VARA_MIGRA_HOM")
-    private Integer idVaraMigraHom;
+    private Date dataUsuarioExclusao;
 }
