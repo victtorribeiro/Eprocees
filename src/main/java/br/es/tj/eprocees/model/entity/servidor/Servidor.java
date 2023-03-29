@@ -10,6 +10,7 @@ import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import br.es.tj.eprocees.model.entity.pessoa.PessoaFisica;
 import lombok.Data;
 
 @Entity
@@ -20,10 +21,10 @@ public class Servidor {
     @Column(name = "ID_PESSOA_JURIDICA")
     private Integer id;
 
-    // @MapsId
-    // @OneToOne
-    // @JoinColumn(name = "ID_PESSOA_JURIDICA")
-    // private Pessoa pessoa;
+    @MapsId
+    @OneToOne
+    @JoinColumn(name = "ID_PESSOA_JURIDICA")
+    private PessoaFisica pessoa;
 
     @Column(name = "CD_MATRICULA_RH")
     private Integer cdMatriculaRh;

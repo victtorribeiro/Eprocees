@@ -1,19 +1,16 @@
-package br.es.tj.eprocees.service.servidor;
+package br.es.tj.eprocees.service.pessoa;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.es.tj.eprocees.repository.servidor.ServidorRepository;
-import lombok.RequiredArgsConstructor;
+import br.es.tj.eprocees.repository.pessoa.PessoaFisicaRepository;
 
 @Service
-@RequiredArgsConstructor
-public class ServidorService {
-
+public class PessoaFisicaService {
     @Autowired
-    private ServidorRepository servidorRepository;
+    PessoaFisicaRepository pessoaFisicaRepository;
 
     public List<Object> pesquisarMagistrado(String cdMatricula, String nmPessoa){
         String filtros = "";
@@ -26,6 +23,6 @@ public class ServidorService {
             filtros += "AND PESSOA_FISICA.NM_PESSOA LIKE UPPER( " + nmPessoa + " )";
         }
 
-        return servidorRepository.pesquisarMagistrado(nmPessoa);
+        return pessoaFisicaRepository.pesquisarMagistrado(filtros);
     }
 }
