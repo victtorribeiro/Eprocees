@@ -1,7 +1,5 @@
 package br.es.tj.eprocees.controller.pessoa;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +16,7 @@ public class PessoaController {
     @GetMapping("/")
     public String findById() {
         Pessoa pessoa = pessoaService.findById().get();
-        System.out.println(pessoa.getTipoPessoa().getDsTipoPessoa());
+        System.out.println(pessoa.getPessoaJuridica().getDsNomeFantasia());
         return "/index.html";
     }
 }
