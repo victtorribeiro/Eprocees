@@ -1,5 +1,5 @@
-<div th:fragment="data_datepicker (id,class)" th:class="|input-group date ${class}|">
-    <input type="text" th:id="${id}" class="datepicker input-data">
+<div th:fragment="data_datepicker (id,class,name)" th:class="|input-group date ${class}|">
+    <input type="text" th:id="${id}" class="form-control datepicker input-data" th:name="${name} neq null ? ${name} : ${id}">
     <div class="input-group-text" onclick="$('#' + this.getAttribute('data-id-input')).datepicker('show');" th:data-id-input="${id}">
         <i class="fa-solid fa-calendar-days"></i>
     </div>
