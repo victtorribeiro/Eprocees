@@ -27,11 +27,6 @@ public class IndexController {
         return "redistribuir_processo";
     }
 
-    @GetMapping("/cadastrar_impedimento")
-    public String cadastrarImpedimento() {
-        return "cadastrar_impedimento";
-    }
-
     @GetMapping("/selecionar_magistrado")
     public String selecionarMagistrado() {
         return "selecionar_magistrado";
