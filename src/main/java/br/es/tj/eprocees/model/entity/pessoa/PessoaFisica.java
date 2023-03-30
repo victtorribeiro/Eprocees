@@ -3,14 +3,20 @@ package br.es.tj.eprocees.model.entity.pessoa;
 import java.util.Date;
 
 import javax.persistence.Column;
+import javax.persistence.ColumnResult;
+import javax.persistence.ConstructorResult;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
+import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+import br.es.tj.eprocees.model.PesquisarMagistrado;
 import lombok.Data;
+
+@SqlResultSetMapping(name = "PesquisarMagistrado", classes = @ConstructorResult(targetClass = PesquisarMagistrado.class, columns = { @ColumnResult(name = "ID_PESSOA_FISICA"), @ColumnResult(name = "NM_PESSOA")}))
 
 @Entity
 @Data
