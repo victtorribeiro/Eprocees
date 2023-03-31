@@ -11,7 +11,7 @@ import br.es.tj.eprocees.model.PesquisarMagistrado;
 import br.es.tj.eprocees.model.entity.pessoa.PessoaFisica;
 
 @Repository
-public interface PessoaFisicaRepository extends JpaRepository<PessoaFisica, Long>{
+public interface PessoaFisicaRepository extends JpaRepository<PessoaFisica, Integer>{
     @Query(name = "PesquisarMagistrado", nativeQuery = true)
     public List<PesquisarMagistrado> pesquisarMagistrado(@Param("nmPessoa") String nmPessoa, @Param("cdMatriculaRh") String cdMatriculaRh);
 }

@@ -18,7 +18,7 @@ import br.es.tj.eprocees.model.PesquisarMagistrado;
 import lombok.Data;
 
 //Pesquisa de Magistrados
-@SqlResultSetMapping(name = "PesquisarMagistradoResult", classes = { @ConstructorResult(targetClass = PesquisarMagistrado.class, columns = { @ColumnResult(name = "CD_MATRICULA_RH", type = Long.class), @ColumnResult(name = "ID_PESSOA_FISICA", type = Long.class), @ColumnResult(name = "NM_PESSOA")})})
+@SqlResultSetMapping(name = "PesquisarMagistradoResult", classes = { @ConstructorResult(targetClass = PesquisarMagistrado.class, columns = { @ColumnResult(name = "CD_MATRICULA_RH", type = Integer.class), @ColumnResult(name = "ID_PESSOA_FISICA", type = Integer.class), @ColumnResult(name = "NM_PESSOA")})})
 @NamedNativeQuery(name = "PesquisarMagistrado", query = "SELECT SERVIDOR.CD_MATRICULA_RH, PESSOA_FISICA.ID_PESSOA_FISICA, PESSOA_FISICA.NM_PESSOA FROM PESSOA_FISICA JOIN SERVIDOR ON ( PESSOA_FISICA.ID_PESSOA_FISICA = SERVIDOR.ID_PESSOA_FISICA) JOIN FUNCAO_SERVIDOR ON ( SERVIDOR.ID_PESSOA_FISICA = FUNCAO_SERVIDOR.ID_PESSOA_FISICA) JOIN FUNCAO ON ( FUNCAO_SERVIDOR.ID_FUNCAO = FUNCAO.ID_FUNCAO) WHERE FUNCAO.ID_FUNCAO = PA_SHARED.GET_PARAMETRO('id.funcao.juiz')  AND ( :nmPessoa IS NULL OR PESSOA_FISICA.NM_PESSOA LIKE UPPER( :nmPessoa ) )  AND ( :cdMatriculaRh IS NULL OR SERVIDOR.CD_MATRICULA_RH LIKE :cdMatriculaRh ) ", resultSetMapping = "PesquisarMagistradoResult")
 
 @Entity
