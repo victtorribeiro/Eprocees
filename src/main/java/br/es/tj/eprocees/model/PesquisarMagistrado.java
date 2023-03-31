@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class PesquisarMagistrado {
 
-    private Integer ID_PESSOA_FISICA;
+    private Long CD_MATRICULA_RH;
+
+    private Long ID_PESSOA_FISICA;
 
     private String NM_PESSOA;
 }
