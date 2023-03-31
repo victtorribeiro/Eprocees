@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Impedimento</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" media="all" />
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css" media="all" />
     <link rel="stylesheet" href="/css/index.css" media="all" />
     <link rel="stylesheet" href="/fontawesome_free_6_3_0/all.min.css" media="all">
 </head>
@@ -20,7 +20,7 @@
             <header>IMPEDIMENTO</header>
         </div>
 
-        <form action="/cadastrar_impedimento/selecionar_impedimento" method="get">
+        <form id="formPesquisarMagistrado" action="/cadastrar_impedimento/selecionar_impedimento" method="get">
 
             <div id="filtros" class="col-10">
                 <div class="row">
@@ -29,13 +29,16 @@
                         <div class="row">
                             <div class="input-group">
                                 <div class="col-2">
-                                    <input type="text" class="form-control" id="MATRICULA" placeholder="Matrícula" th:value="${magistrado} != null ? ${magistrado.CD_MATRICULA_RH} : '' ">
+                                    <input type="text" class="form-control" id="cdMatriculaRh" name="cdMatriculaRh" placeholder="Matrícula"
+                                        onchange="biblioteca.pagina.cadastrarImpedimento.pesquisarMagistrado()"
+                                        th:value="${magistrado} != null ? ${magistrado.CD_MATRICULA_RH} : '' ">
                                 </div>
                                 <div class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" id="NOME" placeholder="Nome">
+                                    <input type="text" class="form-control" id="nmPessoa" placeholder="Nome"
+                                        th:value="${magistrado} != null ? ${magistrado.NM_PESSOA} : '' ">
                                 </div>
                             </div>
                         </div>
@@ -121,12 +124,78 @@
         th:replace="modais/modal_selecionar_pessoa :: modal_selecionar_pessoa (modalAnterior='modalEditarImpedimento')">
     </div>
 
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="jquery/jquery-3.6.4.min.js"></script>
-    <script src="jquery_mask/jquery.mask.min.js"></script>
-    <script src="js/mascara.js"></script>
-    <script src="js/alterar_pessoa.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/jquery/jquery-3.6.4.min.js"></script>
+    <script src="/jquery_mask/jquery.mask.min.js"></script>
+    <script src="/js/mascara.js"></script>
+    <script src="/js/alterar_pessoa.js"></script>
     <script src="/fontawesome_free_6_3_0/all.min.js"></script>
+
+    <script>
+        var biblioteca = biblioteca || {};
+        biblioteca.pagina = biblioteca.pagina || {};
+
+        biblioteca.pagina.cadastrarImpedimento = (function () {
+
+            function pesquisarMagistrado() {
+                let dados = {};
+                let dadosFormularo = new FormData(document.getElementById("formPesquisarMagistrado"));
+
+                dados["cdMatriculaRh"] = dadosFormularo.get("cdMatriculaRh");
+                dados["nmPessoa"] = dadosFormularo.get("nmPessoa");
+
+                if(dados.cdMatriculaRh != ""){
+                    $("#fundoCarregando").show();
+                    enviarRequisicaoGet("/cadastrar_impedimento/pesquisar_magistrado", dados, colocarDadosMagistradoCampo);
+                    
+                }
+            }
+
+            function enviarRequisicaoGet(url, dados, funcaoSucesso) {
+                $.ajax({
+                    async: true,
+                    url: window.location.origin + url,
+                    contentType: "application/json",
+                    dataType: "text",
+                    type: "GET",
+                    timeout: 180000,//3min
+                    data: dados,
+                    success: funcaoSucesso,
+                    error: function (xhr, status, error) {
+                        if (status != "error") {
+                            alert(error.message);
+                        }
+                        else {
+                            alert("O sistema comportou-se de maneira inesperada");
+                        }
+                    },
+                    complete: function(){
+                        $("#fundoCarregando").hide();
+                    }
+                });
+            }
+
+            function colocarDadosMagistradoCampo(retorno) {
+                let magistrado = JSON.parse(retorno);
+                if (magistrado) {
+                    $("#nmPessoa").val(magistrado.nm_PESSOA);
+                }
+            }
+
+            return {
+                pesquisarMagistrado: pesquisarMagistrado
+            }
+        })();
+
+    </script>
+
+    <div id="fundoCarregando" style="display: none;" >
+        <div class="align-items-center d-flex justify-content-center" style="height: 100vh; width: 100vw; position: fixed; top: 0; left: 0; z-index: 10; background-color: black; opacity: 0.8;" >
+            <div class="spinner-border text-light" role="status" style="height: 50px;width: 50px;">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

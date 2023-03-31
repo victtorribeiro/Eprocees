@@ -18,12 +18,12 @@ import lombok.Data;
 @Table(name = "SERVIDOR")
 public class Servidor {
     @Id
-    @Column(name = "ID_PESSOA_JURIDICA")
+    @Column(name = "ID_PESSOA_PESSOA")
     private Integer id;
 
     @MapsId
     @OneToOne
-    @JoinColumn(name = "ID_PESSOA_JURIDICA")
+    @JoinColumn(name = "ID_PESSOA_PESSOA")
     private PessoaFisica pessoa;
 
     @Column(name = "CD_MATRICULA_RH")
