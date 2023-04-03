@@ -4,12 +4,12 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.es.tj.eprocees.model.PesquisarMagistrado;
+import br.es.tj.eprocees.model.entity.retornoQueries.RetornoPesquisaMagistrado;
+import br.es.tj.eprocees.model.entity.retornoQueries.RetornoPesquisaRelator;
 import br.es.tj.eprocees.repository.pessoa.PessoaFisicaRepository;
 
 @Service
@@ -17,12 +17,16 @@ public class PessoaFisicaService {
     @Autowired
     PessoaFisicaRepository pessoaFisicaRepository;
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    public List<RetornoPesquisaMagistrado> pesquisarMagistrado(String cdMatricula, String nmPessoa) {
 
-    public List<PesquisarMagistrado> pesquisarMagistrado(String cdMatricula, String nmPessoa){
+        List<RetornoPesquisaMagistrado> lista = this.pessoaFisicaRepository.pesquisarMagistrado(nmPessoa, cdMatricula);
 
-        List<PesquisarMagistrado> lista = this.pessoaFisicaRepository.pesquisarMagistrado(nmPessoa, cdMatricula);
+        return lista;
+    }
+
+    public List<RetornoPesquisaRelator> pesquisarRelator(String cdMatricula, String nmPessoa) {
+
+        List<RetornoPesquisaRelator> lista = this.pessoaFisicaRepository.pesquisarRelator(nmPessoa, cdMatricula, 7);
 
         return lista;
     }
