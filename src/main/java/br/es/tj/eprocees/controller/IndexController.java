@@ -67,14 +67,9 @@ public class IndexController {
         return "selecionar_processo_prevento";
     }
 
-    @GetMapping("/selecionar_relaator")
-    public String selecionarRelator() {
-        return "selecionar_relator";
-    }
-
     @GetMapping("/consultar_historico_distribuicao")
     public String consultarHistoricoDistribuicao() {
-        return "consultar_historico_distribuicao";
+        return "/consulta/consultar_historico_distribuicao";
     }
 
     @GetMapping("/cancelar_distribuicao_redistribuicao")

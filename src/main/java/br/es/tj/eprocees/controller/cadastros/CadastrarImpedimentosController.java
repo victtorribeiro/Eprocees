@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import br.es.tj.eprocees.model.PesquisarMagistrado;
+import br.es.tj.eprocees.model.entity.retornoQueries.RetornoPesquisaMagistrado;
 import br.es.tj.eprocees.service.pessoa.PessoaFisicaService;
 
 @Controller
 public class CadastrarImpedimentosController {
-    
+
     @Autowired
     public PessoaFisicaService pessoaFisicaService;
 
@@ -25,12 +25,12 @@ public class CadastrarImpedimentosController {
     }
 
     @GetMapping("/cadastrar_impedimento/pesquisar_magistrado")
-    public ResponseEntity<PesquisarMagistrado> selecionarMagistrado(@RequestParam String cdMatriculaRh, @RequestParam String nmPessoa) {
+    public ResponseEntity<RetornoPesquisaMagistrado> selecionarMagistrado(@RequestParam String cdMatriculaRh,
+            @RequestParam String nmPessoa) {
 
-        List<PesquisarMagistrado> lista = pessoaFisicaService.pesquisarMagistrado(cdMatriculaRh, nmPessoa);
-        
-        return new ResponseEntity<PesquisarMagistrado>(lista.get(0), HttpStatus.OK);
+        List<RetornoPesquisaMagistrado> lista = pessoaFisicaService.pesquisarMagistrado(cdMatriculaRh, nmPessoa);
+
+        return new ResponseEntity<RetornoPesquisaMagistrado>(lista.get(0), HttpStatus.OK);
     }
-    
 
 }
