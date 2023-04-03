@@ -20,10 +20,10 @@ public class PessoaController {
 
     @GetMapping("/")
     public String findById() {
-        Orgao org = orgaoService.findById().get();
-        Pessoa pessoa = pessoaService.findById().get();
-        System.out.println(org.getDsOrgao());
-        System.out.println(pessoa.getPessoaFisica().getCpf().getNumeroCpf());
+        // Orgao org = orgaoService.findById().get();
+        // Pessoa pessoa = pessoaService.findById().get();
+        // System.out.println(org.getDsOrgao());
+        // System.out.println(pessoa.getPessoaFisica().getCpf().getNumeroCpf());
         return "/index.html";
     }
 }

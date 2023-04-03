@@ -4,8 +4,6 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Data;
@@ -21,11 +19,14 @@ public class FuncaoServidor {
     @Column(name = "ID_PESSOA_FISICA")
     private Integer idPessoaFisica;
 
-    @Column(name = "CD_FUNCAO")
-    private String cdFuncao;
+    @Column(name = "ID_FUNCAO")
+    private Integer idFuncao;
 
-    @Column(name = "DS_FUNCAO")
-    private String dsFuncao;
+    @Column(name = "DT_INICIO_FUNCAO")
+    private Date dtInicioFuncao;
+
+    @Column(name = "DT_FIM_FUNCAO")
+    private Date dtFimFuncao;
 
     @Column(name = "ID_USUARIO_CRIACAO")
     private Integer idUsuarioCriacao;
