@@ -20,7 +20,7 @@
             <header>IMPEDIMENTO</header>
         </div>
 
-        <form id="formPesquisarMagistrado" action="/cadastrar_impedimento/selecionar_impedimento" method="get">
+        <form id="formPesquisarMagistrado" action="/consultar_impedimento" method="get">
 
             <div id="filtros" class="col-10">
                 <div class="row">
@@ -32,12 +32,13 @@
                                     <input type="text" class="form-control" id="cdMatriculaRh" name="cdMatriculaRh" placeholder="Matrícula"
                                         onchange="biblioteca.pagina.cadastrarImpedimento.pesquisarMagistrado()"
                                         th:value="${magistrado} != null ? ${magistrado.CD_MATRICULA_RH} : '' ">
+                                    <input id="idPessoaFisica" name="idPessoaFisica" type="hidden" th:value="${magistrado} != null ? ${magistrado.ID_PESSOA_FISICA} : '' ">
                                 </div>
                                 <div class="input-group-text">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </div>
                                 <div class="col-8">
-                                    <input type="text" class="form-control" id="nmPessoa" placeholder="Nome"
+                                    <input type="text" class="form-control" id="nmPessoa" name="nmPessoa" placeholder="Nome"
                                         th:value="${magistrado} != null ? ${magistrado.NM_PESSOA} : '' ">
                                 </div>
                             </div>
@@ -85,16 +86,14 @@
                         <th>Observação</th>
                     </tr>
 
-                    <tr>
-                        <td><input type="radio" name="pessoaRelacionada" value="1"></td>
-                        <td>Andre Arnal Perenzi</td>
-                        <td>ART. 135 do CPC</td>
-                        <td>Advogado</td>
-                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley</td>
+                    <tr th:each="impedimento, statusItem : ${impedimentos}">
+                        <td><input type="radio" name="pessoaRelacionada" th:value="${statusItem.index} + 1"></td>
+                        <td th:text="${impedimento.NOME}"></td>
+                        <td th:text="${impedimento.DS_MOTIVO}"></td>
+                        <td th:text="${impedimento.DS_TIPO_PESSOA}"></td>
+                        <td th:text="${impedimento.TX_MOTIVO_IMPEDIMENTO}"></td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <td><input type="radio" name="pessoaRelacionada" value="2"></td>
                         <td>Andre Arnal Perenzi</td>
                         <td>ART. 135 do CPC</td>
@@ -111,7 +110,7 @@
                         <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
                             been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
                             galley</td>
-                    </tr>
+                    </tr> -->
                 </tbody>
             </table>
         </div>
@@ -179,6 +178,7 @@
                 let magistrado = JSON.parse(retorno);
                 if (magistrado) {
                     $("#nmPessoa").val(magistrado.nm_PESSOA);
+                    $("#idPessoaFisica").val(magistrado.id_PESSOA_FISICA);
                 }
             }
 

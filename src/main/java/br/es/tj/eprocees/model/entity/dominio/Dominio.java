@@ -1,6 +1,7 @@
 package br.es.tj.eprocees.model.entity.dominio;
 
 import javax.persistence.Column;
+import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -11,11 +12,13 @@ import lombok.Data;
 @Table(name = "DOMINIO")
 public class Dominio {
 
-    @Column(name = "NM_DOMINIO")
-    private String nmDominio;
+    // @Column(name = "NM_DOMINIO")
+    // private String nmDominio;
 
-    @Column(name = "CD_DOMINIO")
-    private String cdDominio;
+    // @Column(name = "CD_DOMINIO")
+    // private String cdDominio;
+    @EmbeddedId
+    private DominioId dominioId;
 
     @Column(name = "DS_DOMINIO")
     private String dsDominio;

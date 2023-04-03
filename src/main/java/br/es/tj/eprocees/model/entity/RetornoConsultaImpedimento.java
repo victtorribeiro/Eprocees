@@ -24,4 +24,10 @@ public class RetornoConsultaImpedimento {
     private String NOME;
 
     private Integer CD_MATRICULA_RH;
+
+    private String DS_TIPO_PESSOA;
+
+    private String DS_MOTIVO;
+
+    private String NM_MAGISTRADO;
 }
